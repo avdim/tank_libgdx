@@ -1,8 +1,8 @@
 # Deploy JS game to GitHub Pages
 
 on:
-  push:
-    branches: [ "main", "master" ]
+#  push:
+#    branches: [ "main", "master" ]
 
 jobs:
   build:
@@ -25,6 +25,6 @@ jobs:
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: github-pages # The branch the action should deploy to.
-          FOLDER: html/webapp # The folder the action should deploy.
+          FOLDER: html/build/dist # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
-          
+
