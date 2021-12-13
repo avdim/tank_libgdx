@@ -19,12 +19,12 @@ jobs:
         run: |
           ./gradlew html:tasks
           ./gradlew html:dist
-          ls -la html
+          ls -la html/webapp
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: github-pages # The branch the action should deploy to.
-          FOLDER: build/distributions # The folder the action should deploy.
+          FOLDER: html/webapp # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
           
